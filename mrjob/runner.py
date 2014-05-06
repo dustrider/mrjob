@@ -1226,7 +1226,7 @@ class MRJobRunner(object):
         log.info('Piping files into sort for Windows compatibility')
         with open(output_path, 'w') as output:
             with open(err_path, 'w') as err:
-                args = ['sort']
+                args = ['sort', '/REC','65535']
                 log.info('> %s' % cmd_line(args))
                 proc = Popen(args, stdin=PIPE, stdout=output, stderr=err,
                              env=env)
